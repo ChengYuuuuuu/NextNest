@@ -8,6 +8,7 @@ import Orders from './pages/Orders';
 import Profile from './pages/Profile';
 import Checkout from './pages/Checkout';
 import SellForm from './pages/SellForm';
+import StaffInspection from './pages/StaffInspection';
 
 export default function App(){
   const [accommodation,setAccommodation]=useState(()=>localStorage.getItem('campusloop-accommodation')||'Kemp Porter Buildings');
@@ -17,7 +18,8 @@ export default function App(){
     <Route path="/explore" element={<Explore accommodation={accommodation} setAccommodation={setAccommodation}/>}/>
     <Route path="/product/:id" element={<ProductDetail accommodation={accommodation}/>}/>
     <Route path="/checkout/:id" element={<Checkout accommodation={accommodation}/>}/>
-    <Route path="/sell" element={<Sell/>}/><Route path="/sell/new" element={<SellForm/>}/>
+    <Route path="/sell" element={<Sell/>}/><Route path="/sell/new" element={<SellForm/>}/><Route path="/sell/:step" element={<SellForm/>}/>
+    <Route path="/staff" element={<StaffInspection/>}/>
     <Route path="/orders" element={<Orders/>}/><Route path="/profile" element={<Profile accommodation={accommodation}/>}/>
     <Route path="*" element={<Navigate to="/explore" replace/>}/>
   </Routes></PhoneFrame>

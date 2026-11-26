@@ -1,1 +1,1 @@
-export default function CategoryTabs({selected,onSelect}){return <div className="category-tabs">{['All','Electronics','Furniture','Kitchen','Home','Other'].map(x=><button key={x} className={selected===x?'selected':''} onClick={()=>onSelect(x)}>{x}</button>)}</div>}
+export default function CategoryTabs({selected,onSelect}){return <div className="category-tabs">{['All','Shop','Free to take','Electronics','Kitchen','Home','Other'].map(x=><button key={x} className={selected===x?'selected':''} onClick={()=>onSelect(x)}>{x}</button>)}</div>}
